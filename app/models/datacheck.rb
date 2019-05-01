@@ -1,0 +1,2 @@
+class Datacheck < ApplicationRecord
+end

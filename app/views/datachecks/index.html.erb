@@ -1,0 +1,34 @@
+<% if user_signed_in? %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% end %>
+<br>
+hello
+<br>
+<%= link_to "Edit Profile", edit_profile_path(current_user.profile) %>
+<br>
+<p id="notice"><%= notice %></p>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datachecks.each do |datacheck| %>
+      <tr>
+        <td><%= datacheck.first_name %></td>
+        <td><%= datacheck.last_name %></td>
+        <td><%= link_to 'Show', datacheck_path(datacheck) %></td>
+        <td><%= link_to 'Edit', edit_datacheck_path(datacheck) %></td>
+        <td><%= link_to 'Destroy', datacheck_path(datacheck), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%=link_to 'New', new_datacheck_path %>

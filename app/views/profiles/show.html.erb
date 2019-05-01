@@ -1,0 +1,37 @@
+<%= image_tag @profile.avatar.url(:thumb) %>
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name%>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @profile.age %>
+</p>
+<p>
+  <strong>Gender:</strong>
+  <%= @profile.gender %>
+</p>
+<p>
+  <strong>Mobile:</strong>
+  <%= @profile.mobile %>
+</p>
+<p>
+  <strong>City:</strong>
+  <%= @profile.city %>
+</p>
+<p>
+  <strong>Country:</strong>
+  <%= @profile.country %>
+</p>
+<p>
+  <strong>Hobbies:</strong>
+  <%= @profile.hobbies%>
+</p>
+<%= image_tag @profile.image.url(:thumb) %>
+<br><br>
+<% @profile.avatars.each do |img| %>
+  <%= image_tag img.url(:thumb) %>
+<% end %>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
