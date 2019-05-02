@@ -1,4 +1,16 @@
 <%= form_with( model: profile, local: true, html: { multipart: true }) do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
  <%= form.hidden_field :user_id %>
 
   <%= form.label :Full_Name%>
@@ -17,7 +29,7 @@
   <br/>
   <br/>
   <%= form.label :Mobile%>
-  <%= form.telephone_field :mobile%>
+  <%= form.telephone_field :contact%>
   <br/>
   <br/>
   <%= form.label :City%>
@@ -35,12 +47,10 @@
   <%= form.label :Zip_code%>
   <%= form.text_field :zipcode%>
   <br/>
-  Avatar Upload
+  Image Upload
   <%= form.file_field :avatar %>
   <br><br>
-  Image Upload
-  <%= form.file_field :image %>
-  <br><br>
+  
  
   <%= form.submit %>
 <% end %>

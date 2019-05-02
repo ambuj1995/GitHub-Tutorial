@@ -1,9 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [ :show, :edit, :update, :destroy]
-  def new
-    @profile = Profile.new
-  end
-
+  
   def edit
   end
 
@@ -12,12 +9,10 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      # params[:photos].each do |photo|
-      #   @profile.photos.create(image: photo)
-      # end if params[:photo].present?
+      
       redirect_to @profile, notice: 'Profile was successfully created.'
     else
-      redirect_to root_path 
+      render :edit
     end
   end
 
@@ -27,6 +22,6 @@ class ProfilesController < ApplicationController
     end
 
    def profile_params
-      params.require(:profile).permit(:name, :age, :gender, :mobile, :city, :country, :user_id, :avatar, :image, avatars:[], hobbies: [] )
+      params.require(:profile).permit(:name, :age, :gender, :contact, :city, :country, :user_id, :state, :zipcode, :avatar)
     end
 end
