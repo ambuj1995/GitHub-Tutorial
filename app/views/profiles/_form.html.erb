@@ -1,0 +1,46 @@
+<%= form_with( model: profile, local: true, html: { multipart: true }) do |form| %>
+ <%= form.hidden_field :user_id %>
+
+  <%= form.label :Full_Name%>
+  <%= form.text_field :name %>
+  <br/>
+  <br/>
+
+  <%= form.label :Age%>
+  <%= form.text_field :age%>
+  <br/>
+  <br/>
+  <%= form.radio_button(:gender, "male") %>
+  <%= form.label(:gender_male, "Male") %>
+  <%= form.radio_button(:gender, "female") %>
+  <%= form.label(:gender_female, "Female") %>
+  <br/>
+  <br/>
+  <%= form.label :Mobile%>
+  <%= form.telephone_field :mobile%>
+  <br/>
+  <br/>
+  <%= form.label :City%>
+  <%= form.text_field :city%>
+  <br/>
+  <br/>
+  <%= form.label :State%>
+  <%= form.text_field :state%>
+  <br/>
+  <br/>
+  <%= form.label :Country%>
+  <%= form.text_field :country%>
+  <br/>
+  <br/>
+  <%= form.label :Zip_code%>
+  <%= form.text_field :zipcode%>
+  <br/>
+  Avatar Upload
+  <%= form.file_field :avatar %>
+  <br><br>
+  Image Upload
+  <%= form.file_field :image %>
+  <br><br>
+ 
+  <%= form.submit %>
+<% end %>
