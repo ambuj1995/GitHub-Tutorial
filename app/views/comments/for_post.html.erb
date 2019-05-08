@@ -1,0 +1,31 @@
+<div class="col-md-2 col-md-offset-2"></div>
+
+<div class="col-md-8">
+  <h3>Comments for post <%= @post.post_detail%> </h3>
+  <div class="all-comments">
+    <% @comments.each do |comment| %>
+      <% if comment.persisted? %>
+        <div class="comment">
+          <p>
+            <%= comment.comment_detail%>
+            <span>
+              <%= link_to 'Edit', edit_comment_path(comment) %> 
+              <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %> 
+            </span>
+          </p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="comment-form">
+    <%= form_for(:comment, url: comments_path , method: :POST) do |f| %>
+      <%= f.hidden_field :user_id %>
+      <%= f.hidden_field :post_id %>
+      <br>
+      <%= f.text_area :comment_detail, class: 'form-control' %>
+      <br>
+      <%= f.submit 'Make Comment', class: 'btn btn-primary form-control' %>
+    <% end %>
+  </div>
+</div>

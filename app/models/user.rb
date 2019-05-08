@@ -7,9 +7,10 @@ class User < ApplicationRecord
 
     
   has_one :profile, dependent: :destroy
-  has_many :comments
-  has_many :likes
   has_many :posts
+  has_many :comments
+  
+  
 
   after_create :set_profile
 
