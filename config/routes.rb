@@ -2,11 +2,16 @@ Rails.application.routes.draw do
   root "dashboards#index"
   devise_for :users
   resources :profiles
-  resources :posts
+  resources :posts do 
+    member do
+      get :like_post
+    end
+  end
   resources :comments do
-    # member do
-    #   get :post_comments
-    # end 
+    member do
+      get :like_comment
+    end 
+
     collection do
       get :for_post
     end

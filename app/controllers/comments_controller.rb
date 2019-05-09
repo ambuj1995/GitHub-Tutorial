@@ -1,6 +1,21 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:edit, :update, :destroy]
 
+  def like_comment
+
+   @comment = Comment.find(params[:comment_id])
+   like = @comment.likes.where(user_id: current_user.id).first_or_initialize
+   if like.persisted? # check if ID present or not.
+     like.delete
+   else
+     like.save
+   end
+   
+   redirect_to for_post_comments_path(post_id: @comment.post.id)
+  end
+  
+
+
   # Show all comments of an specific post
   def for_post
     @post = Post.find(params[:post_id])

@@ -1,6 +1,17 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [ :edit, :update, :destroy]
 
+ def like_post
+   @post = Post.find(params[:post_id])
+   like = @post.likes.where(user_id: current_user.id).first_or_initialize
+   if like.persisted? # check if ID present or not.
+     like.delete
+   else
+     like.save
+   end
+   redirect_to root_path
+  end
+
   def new
     @post = current_user.posts.new
   end

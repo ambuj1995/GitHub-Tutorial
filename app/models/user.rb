@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_many :posts
   has_many :comments
-  
+  has_many :likes, as: :imageable
   
 
   after_create :set_profile

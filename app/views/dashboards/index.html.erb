@@ -21,7 +21,12 @@
              <%= link_to 'Edit', edit_post_path(post) %> | 
              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> |
            <% end %>
-            <%= link_to 'Comments', for_post_comments_path(post_id: post.id) %>
+            <%= link_to 'Comments', for_post_comments_path(post_id: post.id) %> |
+            
+
+            <%= link_to 'Like',  like_post_post_path(post, post_id: post.id) %> |
+            <%= post.likes.count %> likes
+
           </span>
         </p>
       </div>

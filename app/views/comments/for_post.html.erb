@@ -10,7 +10,9 @@
             <%= comment.comment_detail%>
             <span>
               <%= link_to 'Edit', edit_comment_path(comment) %>    |
-              <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %> 
+              <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %> |
+               <%= link_to 'Like',   like_comment_comment_path(comment, comment_id: comment.id) %> |
+               <%= comment.likes.count %> likes
             </span>
           </p>
         </div>
