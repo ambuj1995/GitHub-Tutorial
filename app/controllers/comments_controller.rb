@@ -23,6 +23,7 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @post = @comment.post
     if @comment.update(comment_params)
       redirect_to for_post_comments_path(post_id: @post.id), notice: 'Comment was successfully updated.'
     else

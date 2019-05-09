@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "dashboards#index"
+  devise_for :users
   resources :profiles
   resources :posts
   resources :comments do

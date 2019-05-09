@@ -1,10 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [ :edit, :update, :destroy]
 
-  def show
-  end
-
- 
   def new
     @post = current_user.posts.new
   end
@@ -36,7 +32,10 @@ class PostsController < ApplicationController
 
   private
     def set_post
-      @post = Post.find(params[:id])
+      @post = current_user.posts.find_by_id(params[:id])
+      if @post.nil?
+        redirect_back(fallback_location: root_path)
+      end
     end
     def post_params
       params.require(:post).permit(:post_detail , :user_id)

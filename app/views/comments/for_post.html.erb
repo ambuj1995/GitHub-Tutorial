@@ -9,7 +9,7 @@
           <p>
             <%= comment.comment_detail%>
             <span>
-              <%= link_to 'Edit', edit_comment_path(comment) %> 
+              <%= link_to 'Edit', edit_comment_path(comment) %>    |
               <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %> 
             </span>
           </p>

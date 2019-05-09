@@ -17,8 +17,10 @@
         <p>
           <%= post.post_detail%>
           <span>
-            <%= link_to 'Edit', edit_post_path(post) %> | 
-            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> |
+           <%if post.user_id == current_user.id %>
+             <%= link_to 'Edit', edit_post_path(post) %> | 
+             <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> |
+           <% end %>
             <%= link_to 'Comments', for_post_comments_path(post_id: post.id) %>
           </span>
         </p>
