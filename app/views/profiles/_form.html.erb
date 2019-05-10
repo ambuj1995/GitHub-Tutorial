@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= form_with( model: profile, local: true, html: { multipart: true }) do |form| %>
   <% if profile.errors.any? %>
     <div id="error_explanation">
@@ -14,6 +15,13 @@
  <%= form.hidden_field :user_id %>
 
   <%= form.label :Full_Name %>
+=======
+
+<%= form_with( model: profile, local: true, html: { multipart: true }) do |form| %>
+ <%= form.hidden_field :user_id %>
+
+  <%= form.label :Name%>
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
   <%= form.text_field :name %>
   <br/>
   <br/>
@@ -28,6 +36,7 @@
   <%= form.label(:gender_female, "Female") %>
   <br/>
   <br/>
+<<<<<<< HEAD
   <%= form.label :Mobile %>
   <%= form.telephone_field :contact%>
   <br/>
@@ -54,3 +63,46 @@
  
   <%= form.submit %>
 <% end %>
+=======
+  <%= form.label :Mobile%>
+  <%= form.telephone_field :mobile%>
+  <br/>
+  <br/>
+  <%= form.label :City%>
+  <%= form.text_field :city%>
+  <br/>
+  <br/>
+  <%= form.label :Country%>
+  <%= form.text_field :country%>
+  <br/>
+  <br/>
+  <%= form.label :Hobbies%>
+  <%= form.check_box(:hobbies) %>
+  <%= form.label(:hobbies, "Reading") %>
+  <%= form.check_box(:hobbies) %>
+  <%= form.label(:hobbies, "Playing") %>
+  <%= form.check_box(:hobbies) %>
+  <%= form.label(:hobbies, "Singing") %>
+  <%= form.check_box(:hobbies) %>
+  <%= form.label(:hobbies, "dancing") %>
+  <br/>
+  Avatar Upload
+  <%= form.file_field :avatar %>
+  <br><br>
+  Image Upload
+  <%= form.file_field :image %>
+  <br><br>
+  Multiple Upload
+  <%= form.file_field :avatars, multiple: true %>
+  <br><br>
+  <%= form.submit %>
+<% end %>
+<h3>A Four Image Set</h3>
+  <div>
+      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg" alt=""/></a>
+      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" /></a>
+      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg" alt="" /></a>
+      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" alt="" /></a>
+  </div>
+</section>
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616

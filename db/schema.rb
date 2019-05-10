@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_05_09_124911) do
 
   # These are extensions that must be enabled in order to support this database
@@ -41,6 +42,18 @@ ActiveRecord::Schema.define(version: 2019_05_09_124911) do
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.text "post_detail"
+=======
+ActiveRecord::Schema.define(version: 2019_04_25_132113) do
+
+  create_table "datachecks", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,6 +61,7 @@ ActiveRecord::Schema.define(version: 2019_05_09_124911) do
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
+<<<<<<< HEAD
     t.string "gender"
     t.integer "age"
     t.integer "contact"
@@ -55,12 +69,26 @@ ActiveRecord::Schema.define(version: 2019_05_09_124911) do
     t.string "state"
     t.string "country"
     t.integer "zipcode"
+=======
+    t.integer "age"
+    t.string "gender"
+    t.integer "mobile"
+    t.string "city"
+    t.string "country"
+    t.string "hobbies"
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+<<<<<<< HEAD
+=======
+    t.string "avatar"
+    t.string "image"
+    t.string "avatars"
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,10 +97,31 @@ ActiveRecord::Schema.define(version: 2019_05_09_124911) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+<<<<<<< HEAD
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+=======
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
   end
 
 end

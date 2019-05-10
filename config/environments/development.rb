@@ -4,6 +4,10 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+<<<<<<< HEAD
+=======
+  
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
   config.cache_classes = false
 
   # Do not eager load code on boot.
@@ -59,13 +63,23 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+<<<<<<< HEAD
   config.action_mailer.smtp_settings = {
+=======
+ 
+  ActionMailer::Base.smtp_settings = {
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
     :address        => "smtp.sendgrid.net",
     :port           => "25",
     :authentication => :plain,
     :user_name      => 'ambuj@123',                                                           
     :password       => 'nabhulni123',
+<<<<<<< HEAD
     :domain         => 'localhost'
   }
 
+=======
+    :domain         =>  'localhost'
+  }
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
 end

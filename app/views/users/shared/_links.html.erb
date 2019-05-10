@@ -11,7 +11,11 @@
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+<<<<<<< HEAD
   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+=======
+  <%= link_to "Didn't receive confirmation instructions?", new_user_confirmation_path(resource_name) %><br />
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>

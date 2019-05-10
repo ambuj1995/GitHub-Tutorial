@@ -1,0 +1,2 @@
+module ResistrationsHelper
+end

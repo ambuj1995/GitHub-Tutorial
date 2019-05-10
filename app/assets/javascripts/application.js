@@ -13,7 +13,10 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+<<<<<<< HEAD
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+=======
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
 //= require_tree .

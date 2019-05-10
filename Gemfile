@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
+<<<<<<< HEAD
 gem 'devise'
 gem "paperclip", "~> 6.0.0"
 
@@ -9,6 +10,17 @@ gem "paperclip", "~> 6.0.0"
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+=======
+gem 'carrierwave', '~> 1.0'
+
+gem "paperclip", "~> 6.0.0"
+gem 'devise'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.2.3'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -37,6 +49,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+<<<<<<< HEAD
+=======
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -59,8 +75,11 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
+<<<<<<< HEAD
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+=======
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

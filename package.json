@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "project_task",
+=======
+  "name": "dataflow",
+>>>>>>> cfb847500bd5f83b7cd2c0e634a3f79cb74b9616
   "private": true,
   "dependencies": {}
 }

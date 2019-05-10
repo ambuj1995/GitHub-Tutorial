@@ -1,0 +1,12 @@
+<%= form_for(@datacheck, url:datacheck_path, method: :PUT)do |f| %>
+  First name: <%= f.text_field :first_name %><br /><br /><br /><br />
+  Last name : <%= f.text_field :last_name %><br /><br /><br />
+   
+  <%= f.submit %>
+<% end %>
+
+
+
+
+<%= link_to 'Show', @datacheck %> |
+<%= link_to 'Back', datachecks_path %>
